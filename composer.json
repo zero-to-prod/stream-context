@@ -1,0 +1,39 @@
+{
+  "type": "library",
+  "name": "zero-to-prod/stream-context",
+  "description": "A wrapper for stream_context_create()",
+  "keywords": [
+    "stream-context",
+    "Stream Context",
+    "zero-to-prod"
+  ],
+  "homepage": "https://github.com/zero-to-prod/stream-context",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "David Smith",
+      "email": "dave0016@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.1",
+    "ext-openssl": "*",
+    "zero-to-prod/data-model": "^71.0",
+    "zero-to-prod/transformable": "^71.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Zerotoprod\\StreamContext\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require-dev": {
+    "phpunit/phpunit": "^7.0"
+  }
+}
