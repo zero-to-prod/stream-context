@@ -11,7 +11,7 @@ use Zerotoprod\StreamContext\StreamContext;
 
 class StreamContextTest extends TestCase
 {
-    public function urlProvider(): array
+    public function urls(): array
     {
         return [
             'neverssl.com' => ['neverssl.com'],
@@ -21,7 +21,7 @@ class StreamContextTest extends TestCase
 
     /**
      * @test
-     * @dataProvider urlProvider
+     * @dataProvider urls
      *
      * @see          DataModel
      */
@@ -53,7 +53,7 @@ class StreamContextTest extends TestCase
 
     /**
      * @test
-     * @dataProvider urlProvider
+     * @dataProvider urls
      *
      * @see          DataModel
      */
@@ -73,6 +73,30 @@ class StreamContextTest extends TestCase
                 ],
                 StreamContextArgs::params => []
             ])
+        );
+
+        self::assertNotNull(
+            stream_socket_get_name($client, true)
+        );
+
+        fclose($client);
+    }
+
+    /**
+     * @test
+     * @dataProvider urls
+     *
+     * @see          DataModel
+     */
+    public function no_args(string $url): void
+    {
+        $client = stream_socket_client(
+            'ssl://'.$url.':'. 443,
+            $error_code,
+            $error_message,
+            30,
+            STREAM_CLIENT_CONNECT,
+            StreamContext::create()
         );
 
         self::assertNotNull(

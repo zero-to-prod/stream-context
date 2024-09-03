@@ -22,13 +22,15 @@ class StreamContext
      * Creates and returns a stream context with any options supplied in options preset.
      * Example:
      * ```
+     *  StreamContext::create();
+     *  // or
      *  StreamContext::create(
      *      StreamContextArgs::from([
-     *          StreamContextArgs::Options => Options::from([
-     *              Options::ssl => Ssl::from([
+     *          StreamContextArgs::Options => [
+     *              Options::ssl => [
      *                  Ssl::peer_name => $url,
-     *              ])
-     *          ])
+     *              ]
+     *          ]
      *      ])
      *  );
      *  ```
@@ -38,13 +40,15 @@ class StreamContext
      * @return resource
      * @see https://www.php.net/manual/en/function.stream-context-create.php
      */
-    public static function create($Args)
+    public static function create($Args = null)
     {
-        return stream_context_create(
-            is_array($Args)
-                ? StreamContextArgs::from($Args)->Options->toArray()
-                : $Args->Options->toArray(),
-            $Args->params
-        );
+        return !$Args
+            ? stream_context_create()
+            : stream_context_create(
+                is_array($Args)
+                    ? StreamContextArgs::from($Args)->Options->toArray()
+                    : $Args->Options->toArray(),
+                $Args->params
+            );
     }
 }
