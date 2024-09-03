@@ -8,6 +8,19 @@ use Zerotoprod\StreamContext\Helpers\DataModel;
  * HTTP context options — HTTP context option listing
  * Context options for http:// and https:// transports.
  *
+ * Example:
+ * ```
+ *  Http::from([
+ *      Http::method => 'POST',
+ *      Http::header => [
+ *          'Content-Type: application/json',
+ *          'Authorization: Bearer token'
+ *      ],
+ *      Http::content => json_encode(['key' => 'value']),
+ *      Http::timeout => 30.0,
+ *      Http::follow_location => 0,
+ *  ]);
+ *
  * @see https://www.php.net/manual/en/context.http.php
  */
 class Http

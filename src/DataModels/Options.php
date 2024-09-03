@@ -5,7 +5,7 @@ namespace Zerotoprod\StreamContext\DataModels;
 use Zerotoprod\StreamContext\Helpers\DataModel;
 
 /**
- * StreamContextCreateOptions provides a structured way to define stream context options
+ * Options provides a structured way to define stream context options
  * for various protocols like HTTP, FTP, SSL, Phar, Zip, and Zlib.
  *
  * Usage:
@@ -13,10 +13,10 @@ use Zerotoprod\StreamContext\Helpers\DataModel;
  * - Each property corresponds to a specific context option class.
  *
  * Example:
- * ```php
- * $Options = Options::from([
+ * ```
+ * Options::from([
  *      Options::ssl => [
- *          Ssl::peer_name => $url
+ *          Ssl::peer_name => 'example.com'
  *      ]
  * ]);
  * ```

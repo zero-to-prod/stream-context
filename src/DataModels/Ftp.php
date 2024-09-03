@@ -6,14 +6,22 @@ use Zerotoprod\StreamContext\Helpers\DataModel;
 
 /**
  * FTP context options — FTP context option listing.
- * Context options for ftp:// and ftps:// transports.
+ * Context options for `ftp://` and `ftps://` transports.
  *
  * Note: Underlying socket stream context options
  * Additional context options may be supported by
- * the underlying transport. For ftp:// streams,
- * refer to context options for the tcp:// transport.
- * For ftps:// streams, refer to context options
- * for the ssl:// transport.
+ * the underlying transport. For `ftp://` streams,
+ * refer to context options for the `tcp://` transport.
+ * For `ftps://` streams, refer to context options
+ * for the `ssl://` transport.
+ *
+ * Example:
+ * ```
+ *  Ftp::from([
+ *      Ftp::overwrite => true,
+ *      Ftp::resume_pos => 1024,
+ *      Ftp::proxy => 'tcp://proxy.example.com:8000',
+ *  ]);
  *
  * @see https://www.php.net/manual/en/context.ftp.php
  */

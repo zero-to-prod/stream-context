@@ -6,7 +6,15 @@ use Zerotoprod\StreamContext\Helpers\DataModel;
 
 /**
  * Phar context options — Phar context option listing
- * Context options for phar:// wrapper.
+ * Context options for `phar://` wrapper.
+ *
+ * Example:
+ * ```
+ *  Phar::from([
+ *      Phar::compress => 'gz',
+ *      Phar::metadata => ['author' => 'John Doe'],
+ *  ]);
+ * ```
  *
  * @see https://www.php.net/manual/en/context.phar.php
  */

@@ -19,11 +19,19 @@ use Zerotoprod\StreamContext\StreamContext;
 use Zerotoprod\StreamContext\DataModels\Options;
 use Zerotoprod\StreamContext\DataModels\Ssl;
 
-$context = StreamContext::create(
-    Options::from([
-        Options::ssl => [
-            Ssl::peer_name => 'example.com'
-        ]
+stream_socket_client(
+    'ssl://neverssl.com:443',
+    $error_code,
+    $error_message,
+    30,
+    STREAM_CLIENT_CONNECT,
+    StreamContext::create([
+        StreamContextArgs::Options => [
+            Options::ssl => [
+                Ssl::peer_name => 'neverssl.com'
+            ]
+        ],
+        StreamContextArgs::params => []
     ])
 );
 ```

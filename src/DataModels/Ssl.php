@@ -6,17 +6,24 @@ use Zerotoprod\StreamContext\Helpers\DataModel;
 
 /**
  * SSL context options — SSL context option listing
- * Context options for ssl:// and tls:// transports.
+ * Context options for `ssl://` and `tls://` transports.
  *
- * Note: Because ssl:// is the underlying transport for the
- * https:// and ftps:// wrappers, any context options which
- * apply to ssl:// also apply to https:// and ftps://.
+ * Note: Because `ssl://` is the underlying transport for the
+ * https:// and `ftps://` wrappers, any context options which
+ * apply to `ssl://` also apply to https:// and `ftps://`.
  *
  * Note: For SNI (Server Name Indication) to be available,
  * then PHP must be compiled with OpenSSL 0.9.8j or
  * greater. Use the OPENSSL_TLSEXT_SERVER_NAME to
  * determine whether SNI is supported.
  *
+ * Example:
+ * ```
+ *  Ssl::from([
+ *     Ssl::peer_name => 'example.com',
+ *     Ssl::verify_peer => true,
+ *  ]);
+ * ```
  * @see https://www.php.net/manual/en/context.ssl.php
  */
 class Ssl
