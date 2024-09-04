@@ -11,11 +11,11 @@ use Zerotoprod\StreamContext\StreamContext;
  * Example:
  * ```
  *  StreamContextArgs::from([
- *      StreamContextArgs::Options => Options::from([
- *          Options::ssl => Ssl::from([
+ *      StreamContextArgs::Options => [
+ *          Options::ssl => [
  *              Ssl::peer_name => $url,
- *          ])
- *      ])
+ *          ]
+ *      ]
  *  ]);
  *  ```
  *
@@ -43,4 +43,61 @@ class StreamContextArgs
      * @var array $params
      */
     public $params;
+
+    /**
+     * Retrieve the default stream context
+     *
+     * Returns the default stream context which is used whenever file
+     * operations (`fopen()`, `file_get_contents()`, etc...) are called
+     * without a context parameter. Options for the default context
+     * can optionally be specified with this function using the same
+     * syntax as `stream_context_create()`.
+     *
+     * @return resource
+     *
+     * @see https://www.php.net/manual/en/function.stream-context-get-default.php
+     * @see https://github.com/zero-to-prod/stream-context
+     */
+    public function getDefault()
+    {
+        return stream_context_get_default($this->Options->toArray());
+    }
+
+    /**
+     * Returns an array of options on the specified stream or context.
+     *
+     * @see https://www.php.net/manual/en/function.stream-context-get-options.php
+     * @see https://github.com/zero-to-prod/stream-context
+     */
+    public function getOptions(): array
+    {
+        return stream_context_get_options($this->getDefault());
+    }
+
+    /**
+     * Retrieves parameter and options information from the stream or context.
+     *
+     * @see https://www.php.net/manual/en/function.stream-context-get-params.php
+     * @see https://github.com/zero-to-prod/stream-context
+     */
+    public function getParams(): array
+    {
+        return stream_context_get_params($this->getDefault());
+    }
+
+    /**
+     * Set the default stream context.
+     *
+     * Set the default stream context which will be used whenever
+     * file operations (`fopen()`, `file_get_contents()`, etc...) are
+     * called without a context parameter. Uses the same syntax
+     * as `stream_context_create()`.
+     *
+     * @see https://www.php.net/manual/en/function.stream-context-set-default.php
+     * @see https://github.com/zero-to-prod/stream-context
+     */
+    public function setDefault(): void
+    {
+        stream_context_set_default($this->Options->toArray());
+    }
 }
