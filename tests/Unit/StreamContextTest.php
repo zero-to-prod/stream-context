@@ -35,11 +35,11 @@ class StreamContextTest extends TestCase
             STREAM_CLIENT_CONNECT,
             StreamContext::create(
                 StreamContextArgs::from([
-                    StreamContextArgs::Options => Options::from([
-                        Options::ssl => Ssl::from([
+                    StreamContextArgs::Options => [
+                        Options::ssl => [
                             Ssl::peer_name => $url
-                        ])
-                    ])
+                        ]
+                    ]
                 ])
             )
         );

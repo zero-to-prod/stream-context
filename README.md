@@ -11,7 +11,7 @@ It provides classes that define all the options for this method.
 
 ## Installation
 
-To install this package, add it to your composer.json file and run composer install:
+To install this package run composer install:
 
 ```shell
 composer require zerotoprod/stream-context
@@ -24,21 +24,24 @@ use Zerotoprod\StreamContext\StreamContext;
 use Zerotoprod\StreamContext\DataModels\Options;
 use Zerotoprod\StreamContext\DataModels\Ssl;
 
-stream_socket_client(
+$client = stream_socket_client(
     'ssl://neverssl.com:443',
     $error_code,
     $error_message,
     30,
     STREAM_CLIENT_CONNECT,
-    StreamContext::create([
-        StreamContextArgs::Options => [
-            Options::ssl => [
-                Ssl::peer_name => 'neverssl.com'
+    StreamContext::create(
+        StreamContextArgs::from([
+            StreamContextArgs::Options => [
+                Options::ssl => [
+                    Ssl::peer_name => $url
+                ]
             ]
-        ],
-        StreamContextArgs::params => []
-    ])
+        ])
+    )
 );
+
+fclose($client);
 ```
 
 ## Supported Protocols
