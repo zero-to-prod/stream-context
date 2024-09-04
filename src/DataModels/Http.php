@@ -22,6 +22,7 @@ use Zerotoprod\StreamContext\Helpers\DataModel;
  *  ]);
  *
  * @see https://www.php.net/manual/en/context.http.php
+ * @see https://github.com/zero-to-prod/stream-context
  */
 class Http
 {

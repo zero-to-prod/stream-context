@@ -24,7 +24,9 @@ use Zerotoprod\StreamContext\Helpers\DataModel;
  *     Ssl::verify_peer => true,
  *  ]);
  * ```
+ *
  * @see https://www.php.net/manual/en/context.ssl.php
+ * @see https://github.com/zero-to-prod/stream-context
  */
 class Ssl
 {

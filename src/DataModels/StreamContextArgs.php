@@ -25,6 +25,7 @@ use Zerotoprod\StreamContext\StreamContext;
  *
  * @see StreamContext::create()
  * @see https://www.php.net/manual/en/function.stream-context-create.php
+ * @see https://github.com/zero-to-prod/stream-context
  */
 class StreamContextArgs
 {

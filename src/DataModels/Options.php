@@ -20,6 +20,7 @@ use Zerotoprod\StreamContext\Helpers\DataModel;
  *      ]
  * ]);
  * ```
+ * @see https://github.com/zero-to-prod/stream-context
  */
 class Options
 {

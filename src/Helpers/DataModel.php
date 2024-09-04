@@ -2,6 +2,9 @@
 
 namespace Zerotoprod\StreamContext\Helpers;
 
+/**
+ * @internal
+ */
 trait DataModel
 {
     use \Zerotoprod\DataModel\DataModel;
