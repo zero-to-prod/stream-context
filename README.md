@@ -1,4 +1,9 @@
-# Zerotoprod\StreamContext
+# `Zerotoprod\StreamContext`
+[![Repo](https://img.shields.io/badge/github-gray?logo=github)](https://github.com/zero-to-prod/stream-context)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/zero-to-prod/stream-context.svg)](https://packagist.org/packages/zero-to-prod/stream-context)
+![test](https://github.com/zero-to-prod/stream-context/actions/workflows/phpunit.yml/badge.svg)
+![Downloads](https://img.shields.io/packagist/dt/zero-to-prod/stream-context.svg?style=flat-square&#41;]&#40;https://packagist.org/packages/zero-to-prod/stream-context&#41)
+
 
 A wrapper for the [`stream_context_create()`](https://www.php.net/manual/en/function.stream-context-create.php) method.
 
