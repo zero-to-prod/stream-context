@@ -21,6 +21,7 @@ composer require zerotoprod/stream-context
 
 ```php
 use Zerotoprod\StreamContext\StreamContext;
+use Zerotoprod\StreamContext\DataModels\StreamContextArgs;
 use Zerotoprod\StreamContext\DataModels\Options;
 use Zerotoprod\StreamContext\DataModels\Ssl;
 
