@@ -31,13 +31,12 @@ $client = stream_socket_client(
     30,
     STREAM_CLIENT_CONNECT,
     StreamContext::create(
-        StreamContextArgs::from([
-            StreamContextArgs::Options => [
-                Options::ssl => [
-                    Ssl::peer_name => $url
-                ]
-            ]
-        ])
+        StreamContextArgs::new()
+            ->set_Options(
+                Options::new()->set_ssl(
+                    Ssl::new()->set_peer_name('neverssl.com')
+                )
+            )
     )
 );
 
