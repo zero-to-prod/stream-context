@@ -15,6 +15,7 @@ use Zerotoprod\StreamContext\DataModels\StreamContextArgs;
  * - The method accepts an `Options` object for protocol-specific settings and an optional
  *   array of parameters.
  *
+ * @link https://www.php.net/manual/en/function.stream-context-create.php
  * @see https://github.com/zero-to-prod/stream-context
  */
 class StreamContext
@@ -43,7 +44,7 @@ class StreamContext
      * @param  StreamContextArgs|array  $Args
      *
      * @return resource
-     * @see https://www.php.net/manual/en/function.stream-context-create.php
+     * @link https://www.php.net/manual/en/function.stream-context-create.php
      * @see https://github.com/zero-to-prod/stream-context
      */
     public static function create($Args = null)
@@ -63,5 +64,24 @@ class StreamContext
                     : $Args->Options->toArray(),
                 $Args->params
             );
+    }
+
+    /**
+     * Creates a stream context
+     * Creates and returns a stream context with any options supplied in options preset.
+     * Example:
+     * ```
+     *  StreamContext::from()
+     *      ->set_Options(Options::new()->set_ssl(Ssl::new()->set_peer_name($url)))
+     *      ->create()
+     *  ```
+     *
+     * @return StreamContextArgs
+     * @link https://www.php.net/manual/en/function.stream-context-create.php
+     * @see https://github.com/zero-to-prod/stream-context
+     */
+    public static function from(): StreamContextArgs
+    {
+        return StreamContextArgs::new();
     }
 }

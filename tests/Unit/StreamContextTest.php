@@ -57,6 +57,32 @@ class StreamContextTest extends TestCase
      *
      * @see          DataModel
      */
+    public function from_fluent(string $url): void
+    {
+        $client = stream_socket_client(
+            'ssl://'.$url.':'. 443,
+            $error_code,
+            $error_message,
+            30,
+            STREAM_CLIENT_CONNECT,
+            StreamContext::from()
+                ->set_Options(Options::new()->set_ssl(Ssl::new()->set_peer_name($url)))
+                ->create()
+        );
+
+        self::assertNotNull(
+            stream_socket_get_name($client, true)
+        );
+
+        fclose($client);
+    }
+
+    /**
+     * @test
+     * @dataProvider urls
+     *
+     * @see          DataModel
+     */
     public function from_array(string $url): void
     {
         $client = stream_socket_client(

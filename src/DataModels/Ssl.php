@@ -39,26 +39,26 @@ use Zerotoprod\StreamContext\Helpers\DataModel;
  *      ->set_security_level(2);
  * ```
  *
- * @see https://www.php.net/manual/en/context.ssl.php
+ * @link https://www.php.net/manual/en/context.ssl.php
  * @see https://github.com/zero-to-prod/stream-context
  *
- * @method self set_peer_name(string $peer_name)
- * @method self set_verify_peer(bool $verify_peer)
- * @method self set_verify_peer_name(bool $verify_peer_name)
- * @method self set_allow_self_signed(bool $allow_self_signed)
- * @method self set_cafile(string $cafile)
- * @method self set_capath(string $capath)
- * @method self set_local_cert(string $local_cert)
- * @method self set_local_pk(string $local_pk)
- * @method self set_passphrase(string $passphrase)
- * @method self set_verify_depth(int $verify_depth)
- * @method self set_ciphers(string $ciphers)
- * @method self set_capture_peer_cert(bool $capture_peer_cert)
- * @method self set_capture_peer_cert_chain(bool $capture_peer_cert_chain)
- * @method self set_SNI_enabled(bool $SNI_enabled)
- * @method self set_disable_compression(bool $disable_compression)
- * @method self set_peer_fingerprint(string|array $peer_fingerprint)
- * @method self set_security_level(int $security_level)
+ * @method self set_peer_name(string $peer_name) Peer name to be used. If this value is not set, then the name is guessed based on the hostname used when opening the stream.
+ * @method self set_verify_peer(bool $verify_peer) Require verification of SSL certificate used.
+ * @method self set_verify_peer_name(bool $verify_peer_name) Require verification of peer name.
+ * @method self set_allow_self_signed(bool $allow_self_signed) Allow self-signed certificates. Requires verify_peer.
+ * @method self set_cafile(string $cafile) Location of Certificate Authority file on local filesystem which should be used with the verify_peer context option to authenticate the identity of the remote peer
+ * @method self set_capath(string $capath) If cafile is not specified or if the certificate is not found there, the directory pointed to by capath is searched for a suitable certificate. capath must be a correctly hashed certificate directory.
+ * @method self set_local_cert(string $local_cert) Path to local certificate file on filesystem. It must be a PEM encoded file which contains your certificate and private key.
+ * @method self set_local_pk(string $local_pk) Path to local private key file on filesystem in case of separate files for certificate (local_cert) and private key.
+ * @method self set_passphrase(string $passphrase) Passphrase with which your local_cert file was encoded.
+ * @method self set_verify_depth(int $verify_depth) Abort if the certificate chain is too deep.
+ * @method self set_ciphers(string $ciphers) Sets the list of available ciphers. The format of the string is described in » ciphers(1).
+ * @method self set_capture_peer_cert(bool $capture_peer_cert) If set to true a peer_certificate context option will be created containing the peer certificate.
+ * @method self set_capture_peer_cert_chain(bool $capture_peer_cert_chain) If set to true a peer_certificate_chain context option will be created containing the certificate chain.
+ * @method self set_SNI_enabled(bool $SNI_enabled) If set to true server name indication will be enabled. Enabling SNI allows multiple certificates on the same IP address.
+ * @method self set_disable_compression(bool $disable_compression) If set, disable TLS compression. This can help mitigate the CRIME attack vector.
+ * @method self set_peer_fingerprint(string|array $peer_fingerprint) Aborts when the remote certificate digest doesn't match the specified hash.
+ * @method self set_security_level(int $security_level) Sets the security level. If not specified the library default security level is used. The security levels are described in » SSL_CTX_get_security_level(3).
  */
 class Ssl
 {
@@ -204,16 +204,14 @@ class Ssl
     public $SNI_enabled;
 
     /**
-     * If set, disable TLS compression. This can help mitigate the CRIME attack
-     * vector.
+     * If set, disable TLS compression. This can help mitigate the CRIME attack vector.
      *
      * @var bool $disable_compression
      */
     public $disable_compression;
 
     /**
-     * Aborts when the remote certificate digest doesn't match the specified
-     * hash.
+     * Aborts when the remote certificate digest doesn't match the specified hash.
      *
      * When a string is used, the length will determine which hashing algorithm
      * is applied, either "md5" (32) or "sha1" (40).

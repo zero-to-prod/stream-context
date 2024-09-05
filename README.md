@@ -42,6 +42,11 @@ $client = stream_socket_client(
 );
 
 fclose($client);
+
+// Alternative
+StreamContext::from()
+    ->set_Options(Options::new()->set_ssl(Ssl::new()->set_peer_name($url)))
+    ->create();
 ```
 
 ## Supported Protocols

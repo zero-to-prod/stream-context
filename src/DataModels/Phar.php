@@ -15,11 +15,11 @@ use Zerotoprod\StreamContext\Helpers\DataModel;
  *      ->set_metadata(['author' => 'John Doe']);
  * ```
  *
- * @see https://www.php.net/manual/en/context.phar.php
+ * @link https://www.php.net/manual/en/context.phar.php
  * @see https://github.com/zero-to-prod/stream-context
  *
- * @method self set_compress(int $compress)
- * @method self set_metadata(mixed $metadata)
+ * @method self set_compress(int $compress) One of Phar compression constants.
+ * @method self set_metadata(mixed $metadata) Phar metadata.
  */
 class Phar
 {

@@ -2,6 +2,7 @@
 
 namespace Zerotoprod\StreamContext\DataModels;
 
+use http\Encoding\Stream;
 use Zerotoprod\StreamContext\Helpers\DataModel;
 use Zerotoprod\StreamContext\StreamContext;
 
@@ -27,11 +28,11 @@ use Zerotoprod\StreamContext\StreamContext;
  * @return resource
  *
  * @see StreamContext::create()
- * @see https://www.php.net/manual/en/function.stream-context-create.php
+ * @link https://www.php.net/manual/en/function.stream-context-create.php
  * @see https://github.com/zero-to-prod/stream-context
  *
  * @method self set_Options(Options $Options)
- * @method self set_params(array $params)
+ * @method self set_params(array $params) Must be an associative array in the format $arr['parameter'] = $value, or null
  */
 class StreamContextArgs
 {
@@ -49,6 +50,14 @@ class StreamContextArgs
      * @var array $params
      */
     public $params;
+
+    /**
+     * @return resource
+     */
+    public function create()
+    {
+        return StreamContext::create($this);
+    }
 
     /**
      * Retrieve the default stream context

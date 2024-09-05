@@ -30,17 +30,17 @@ use Zerotoprod\StreamContext\Helpers\DataModel;
  * @see https://www.php.net/manual/en/context.http.php
  * @see https://github.com/zero-to-prod/stream-context
  *
- * @method self set_method(string $method)
- * @method self set_header(array|string $header)
- * @method self set_user_agent(string $user_agent)
- * @method self set_content(string $content)
- * @method self set_proxy(string $proxy)
- * @method self set_request_fulluri(bool $request_fulluri)
- * @method self set_follow_location(int $follow_location)
- * @method self set_max_redirects(int $max_redirects)
- * @method self set_protocol_version(float $protocol_version)
- * @method self set_timeout(float $timeout)
- * @method self set_ignore_errors(bool $ignore_errors)
+ * @method self set_method(string $method) GET, POST, or any other HTTP method supported by the remote server.
+ * @method self set_header(array|string $header) Additional headers to be sent during request.
+ * @method self set_user_agent(string $user_agent) Value to send with User-Agent: header. This value will only be used if user-agent is not specified in the header context option above.
+ * @method self set_content(string $content) Additional data to be sent after the headers. Typically used with POST
+ * @method self set_proxy(string $proxy) URI specifying address of proxy server (e.g. tcp://proxy.example.com:5100).
+ * @method self set_request_fulluri(bool $request_fulluri) When set to true, the entire URI will be used when constructing the request
+ * @method self set_follow_location(int $follow_location) Follow Location header redirects. Set to 0 to disable.
+ * @method self set_max_redirects(int $max_redirects) The max number of redirects to follow. Value 1 or less means that no redirects are followed.
+ * @method self set_protocol_version(float $protocol_version) HTTP protocol version.
+ * @method self set_timeout(float $timeout) Read timeout in seconds, specified by a float (e.g. 10.5).
+ * @method self set_ignore_errors(bool $ignore_errors) Fetch the content even on failure status codes.
  */
 class Http
 {
@@ -127,11 +127,9 @@ class Http
      * The max number of redirects to follow. Value 1 or less means that no
      * redirects are followed.
      *
-     * Defaults to 20.
-     *
      * @var int $max_redirects
      */
-    public $max_redirects = 20;
+    public $max_redirects;
 
     /**
      * HTTP protocol version.

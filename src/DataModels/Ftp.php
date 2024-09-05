@@ -26,9 +26,9 @@ use Zerotoprod\StreamContext\Helpers\DataModel;
  * @see https://www.php.net/manual/en/context.ftp.php
  * @see https://github.com/zero-to-prod/stream-context
  *
- * @method self set_overwrite(bool $overwrite)
- * @method self set_resume_pos(int $pos)
- * @method self set_proxy(string $proxy)
+ * @method self set_overwrite(bool $overwrite) Allow overwriting of already existing files on remote server. Applies to write mode (uploading) only.
+ * @method self set_resume_pos(int $pos) File offset at which to begin transfer. Applies to read mode (downloading) only.
+ * @method self set_proxy(string $proxy) Proxy FTP request via http proxy server. Applies to file read operations only.
  */
 class Ftp
 {
