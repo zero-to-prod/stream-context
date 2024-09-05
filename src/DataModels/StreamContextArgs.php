@@ -2,7 +2,6 @@
 
 namespace Zerotoprod\StreamContext\DataModels;
 
-use http\Encoding\Stream;
 use Zerotoprod\StreamContext\Helpers\DataModel;
 use Zerotoprod\StreamContext\StreamContext;
 
@@ -27,9 +26,9 @@ use Zerotoprod\StreamContext\StreamContext;
  *
  * @return resource
  *
- * @see StreamContext::create()
+ * @see  StreamContext::create()
  * @link https://www.php.net/manual/en/function.stream-context-create.php
- * @see https://github.com/zero-to-prod/stream-context
+ * @see  https://github.com/zero-to-prod/stream-context
  *
  * @method self set_Options(Options $Options)
  * @method self set_params(array $params) Must be an associative array in the format $arr['parameter'] = $value, or null
@@ -52,7 +51,19 @@ class StreamContextArgs
     public $params;
 
     /**
+     * Creates a stream context
+     * Creates and returns a stream context with any options supplied in options preset.
+     * Example:
+     * ```
+     *  StreamContext::from()
+     *      ->set_Options(Options::new()->set_ssl(Ssl::new()->set_peer_name($url)))
+     *      ->create()
+     * ```
+     *
      * @return resource
+     *
+     * @see StreamContext::create()
+     * @see https://github.com/zero-to-prod/stream-context
      */
     public function create()
     {
@@ -70,7 +81,7 @@ class StreamContextArgs
      *
      * @return resource
      *
-     * @see https://www.php.net/manual/en/function.stream-context-get-default.php
+     * @link https://www.php.net/manual/en/function.stream-context-get-default.php
      * @see https://github.com/zero-to-prod/stream-context
      */
     public function getDefault()
@@ -81,7 +92,7 @@ class StreamContextArgs
     /**
      * Returns an array of options on the specified stream or context.
      *
-     * @see https://www.php.net/manual/en/function.stream-context-get-options.php
+     * @link https://www.php.net/manual/en/function.stream-context-get-options.php
      * @see https://github.com/zero-to-prod/stream-context
      */
     public function getOptions(): array
@@ -92,7 +103,7 @@ class StreamContextArgs
     /**
      * Retrieves parameter and options information from the stream or context.
      *
-     * @see https://www.php.net/manual/en/function.stream-context-get-params.php
+     * @link https://www.php.net/manual/en/function.stream-context-get-params.php
      * @see https://github.com/zero-to-prod/stream-context
      */
     public function getParams(): array
@@ -108,7 +119,7 @@ class StreamContextArgs
      * called without a context parameter. Uses the same syntax
      * as `stream_context_create()`.
      *
-     * @see https://www.php.net/manual/en/function.stream-context-set-default.php
+     * @link https://www.php.net/manual/en/function.stream-context-set-default.php
      * @see https://github.com/zero-to-prod/stream-context
      */
     public function setDefault(): void
