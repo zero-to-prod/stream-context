@@ -19,14 +19,46 @@ use Zerotoprod\StreamContext\Helpers\DataModel;
  *
  * Example:
  * ```
- *  Ssl::from([
- *     Ssl::peer_name => 'example.com',
- *     Ssl::verify_peer => true,
- *  ]);
+ *  Ssl::new()
+ *      ->set_peer_name('example.com')
+ *      ->set_verify_peer(true)
+ *      ->set_verify_peer_name(true)
+ *      ->set_allow_self_signed(false)
+ *      ->set_cafile('/path/to/cafile.pem')
+ *      ->set_capath('/path/to/capath/')
+ *      ->set_local_cert('/path/to/cert.pem')
+ *      ->set_local_pk('/path/to/privatekey.pem')
+ *      ->set_passphrase('mySecretPassphrase')
+ *      ->set_verify_depth(3)
+ *      ->set_ciphers('AES256-SHA')
+ *      ->set_capture_peer_cert(true)
+ *      ->set_capture_peer_cert_chain(true)
+ *      ->set_SNI_enabled(true)
+ *      ->set_disable_compression(true)
+ *      ->set_peer_fingerprint('sha256')
+ *      ->set_security_level(2);
  * ```
  *
  * @see https://www.php.net/manual/en/context.ssl.php
  * @see https://github.com/zero-to-prod/stream-context
+ *
+ * @method self set_peer_name(string $peer_name)
+ * @method self set_verify_peer(bool $verify_peer)
+ * @method self set_verify_peer_name(bool $verify_peer_name)
+ * @method self set_allow_self_signed(bool $allow_self_signed)
+ * @method self set_cafile(string $cafile)
+ * @method self set_capath(string $capath)
+ * @method self set_local_cert(string $local_cert)
+ * @method self set_local_pk(string $local_pk)
+ * @method self set_passphrase(string $passphrase)
+ * @method self set_verify_depth(int $verify_depth)
+ * @method self set_ciphers(string $ciphers)
+ * @method self set_capture_peer_cert(bool $capture_peer_cert)
+ * @method self set_capture_peer_cert_chain(bool $capture_peer_cert_chain)
+ * @method self set_SNI_enabled(bool $SNI_enabled)
+ * @method self set_disable_compression(bool $disable_compression)
+ * @method self set_peer_fingerprint(string|array $peer_fingerprint)
+ * @method self set_security_level(int $security_level)
  */
 class Ssl
 {

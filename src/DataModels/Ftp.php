@@ -17,14 +17,18 @@ use Zerotoprod\StreamContext\Helpers\DataModel;
  *
  * Example:
  * ```
- *  Ftp::from([
- *      Ftp::overwrite => true,
- *      Ftp::resume_pos => 1024,
- *      Ftp::proxy => 'tcp://proxy.example.com:8000',
- *  ]);
+ *  Ftp::new()
+ *      ->set_overwrite(true)
+ *      ->set_resume_pos(1024)
+ *      ->set_proxy('tcp://proxy.example.com:8000');
+ * ```
  *
  * @see https://www.php.net/manual/en/context.ftp.php
  * @see https://github.com/zero-to-prod/stream-context
+ *
+ * @method self set_overwrite(bool $overwrite)
+ * @method self set_resume_pos(int $pos)
+ * @method self set_proxy(string $proxy)
  */
 class Ftp
 {

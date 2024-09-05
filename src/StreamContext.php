@@ -27,13 +27,16 @@ class StreamContext
      *  StreamContext::create();
      *  // or
      *  StreamContext::create(
-     *      StreamContextArgs::from([
-     *          StreamContextArgs::Options => [
-     *              Options::ssl => [
-     *                  Ssl::peer_name => $url,
-     *              ]
-     *          ]
-     *      ])
+     *      StreamContextArgs::new()
+     *          ->set_Options(
+     *              Options::new()->set_ssl(
+     *                  Ssl::new()->set_peer_name('example.com')
+     *              )
+     *          )
+     *          ->set_params([
+     *              'notification' => 'stream_notification_callback',
+     *              'options' => []
+     *          ])
      *  );
      *  ```
      *
@@ -45,6 +48,13 @@ class StreamContext
      */
     public static function create($Args = null)
     {
+        if ($Args instanceof StreamContextArgs) {
+            return stream_context_create(
+                $Args->Options->toArray(),
+                $Args->params
+            );
+        }
+
         return !$Args
             ? stream_context_create()
             : stream_context_create(

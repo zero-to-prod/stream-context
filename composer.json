@@ -18,6 +18,7 @@
   "require": {
     "php": "^7.1",
     "ext-openssl": "*",
+    "zero-to-prod/dynamic-setter": "^71.0",
     "zero-to-prod/data-model": "^71.0",
     "zero-to-prod/transformable": "^71.0"
   },

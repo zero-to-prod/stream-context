@@ -10,19 +10,37 @@ use Zerotoprod\StreamContext\Helpers\DataModel;
  *
  * Example:
  * ```
- *  Http::from([
- *      Http::method => 'POST',
- *      Http::header => [
+ *  Http::new()
+ *      ->set_method('POST')
+ *      ->set_header([
  *          'Content-Type: application/json',
  *          'Authorization: Bearer token'
- *      ],
- *      Http::content => json_encode(['key' => 'value']),
- *      Http::timeout => 30.0,
- *      Http::follow_location => 0,
- *  ]);
+ *      ])
+ *      ->set_user_agent('MyUserAgent/1.0')
+ *      ->set_content(json_encode(['key' => 'value']))
+ *      ->set_proxy('tcp://proxy.example.com:5100')
+ *      ->set_request_fulluri(true)
+ *      ->set_follow_location(0)
+ *      ->set_max_redirects(5)
+ *      ->set_protocol_version(1.1)
+ *      ->set_timeout(30.0)
+ *      ->set_ignore_errors(true);
+ * ```
  *
  * @see https://www.php.net/manual/en/context.http.php
  * @see https://github.com/zero-to-prod/stream-context
+ *
+ * @method self set_method(string $method)
+ * @method self set_header(array|string $header)
+ * @method self set_user_agent(string $user_agent)
+ * @method self set_content(string $content)
+ * @method self set_proxy(string $proxy)
+ * @method self set_request_fulluri(bool $request_fulluri)
+ * @method self set_follow_location(int $follow_location)
+ * @method self set_max_redirects(int $max_redirects)
+ * @method self set_protocol_version(float $protocol_version)
+ * @method self set_timeout(float $timeout)
+ * @method self set_ignore_errors(bool $ignore_errors)
  */
 class Http
 {

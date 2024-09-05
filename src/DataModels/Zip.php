@@ -9,13 +9,13 @@ use Zerotoprod\StreamContext\Helpers\DataModel;
  * Zip context options are available for zip wrappers.
  * Example:
  * ```
- *  Zip::from([
- *      Zip::password => 'secret'
- *  ]);
+ *  Zip::new()->set_password('secret');
  * ```
  *
  * @see https://www.php.net/manual/en/context.zip.php
  * @see https://github.com/zero-to-prod/stream-context
+ *
+ * @method self set_password(string $password)
  */
 class Zip
 {

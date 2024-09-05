@@ -10,14 +10,16 @@ use Zerotoprod\StreamContext\Helpers\DataModel;
  *
  * Example:
  * ```
- *  Phar::from([
- *      Phar::compress => 'gz',
- *      Phar::metadata => ['author' => 'John Doe'],
- *  ]);
+ *  Phar::new()
+ *      ->set_compress('gz')
+ *      ->set_metadata(['author' => 'John Doe']);
  * ```
  *
  * @see https://www.php.net/manual/en/context.phar.php
  * @see https://github.com/zero-to-prod/stream-context
+ *
+ * @method self set_compress(int $compress)
+ * @method self set_metadata(mixed $metadata)
  */
 class Phar
 {

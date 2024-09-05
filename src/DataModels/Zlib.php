@@ -9,13 +9,13 @@ use Zerotoprod\StreamContext\Helpers\DataModel;
  * Zlib context options are available for zlib wrappers.
  * Example:
  * ```
- *  Zlib::from([
- *      Zlib::level => 1
- *  ]);
+ * Zlib::new()->set_level(1);
  * ```
  *
  * @see https://www.php.net/manual/en/context.zlib.php
  * @see https://github.com/zero-to-prod/stream-context
+ *
+ * @method self set_level(int $level)
  */
 class Zlib
 {

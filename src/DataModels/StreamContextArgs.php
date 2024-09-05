@@ -10,13 +10,16 @@ use Zerotoprod\StreamContext\StreamContext;
  *
  * Example:
  * ```
- *  StreamContextArgs::from([
- *      StreamContextArgs::Options => [
- *          Options::ssl => [
- *              Ssl::peer_name => $url,
- *          ]
- *      ]
- *  ]);
+ *  StreamContextArgs::new()
+ *      ->set_Options(
+ *          Options::new()->set_ssl(
+ *              Ssl::new()->set_peer_name('example.com')
+ *          )
+ *      )
+ *      ->set_params([
+ *          'parameter1' => 'value1',
+ *          'parameter2' => 'value2',
+ *      ]);
  *  ```
  *
  * @param  StreamContextArgs|array  $Args
@@ -26,6 +29,9 @@ use Zerotoprod\StreamContext\StreamContext;
  * @see StreamContext::create()
  * @see https://www.php.net/manual/en/function.stream-context-create.php
  * @see https://github.com/zero-to-prod/stream-context
+ *
+ * @method self set_Options(Options $Options)
+ * @method self set_params(array $params)
  */
 class StreamContextArgs
 {
