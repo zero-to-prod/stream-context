@@ -13,7 +13,7 @@ use Zerotoprod\StreamContext\Helpers\DataModel;
  * ```
  *
  * @link https://www.php.net/manual/en/context.zlib.php
- * @see https://github.com/zero-to-prod/stream-context
+ * @see  https://github.com/zero-to-prod/stream-context
  *
  * @method self set_level(int $level) Used to specify the compression level (0 - 9).
  */
@@ -23,6 +23,9 @@ class Zlib
 
     /**
      * Used to specify the compression level (0 - 9).
+     *
+     * @link https://www.php.net/manual/en/context.zlib.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public const level = 'level';
 
@@ -30,6 +33,9 @@ class Zlib
      * Used to specify the compression level (0 - 9).
      *
      * @var int $level
+     *
+     * @link https://www.php.net/manual/en/context.zlib.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public $level;
 }

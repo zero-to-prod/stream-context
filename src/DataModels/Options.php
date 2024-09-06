@@ -50,51 +50,111 @@ class Options
 {
     use DataModel;
 
-    /* @see Http */
+    /**
+     * HTTP context option listing
+     *
+     * @see  Http
+     * @link https://www.php.net/manual/en/context.http.php
+     * @see  https://github.com/zero-to-prod/stream-context
+     */
     public const http = 'http';
-    /* @see Ftp */
+    /**
+     * FTP context option listing
+     *
+     * @see Ftp
+     * @link https://www.php.net/manual/en/context.ftp.php
+     * @see  https://github.com/zero-to-prod/stream-context
+     */
     public const ftp = 'ftp';
-    /* @see Ssl */
+    /**
+     * SSL context option listing
+     *
+     * @see Ssl
+     * @link https://www.php.net/manual/en/context.ssl.php
+     * @see  https://github.com/zero-to-prod/stream-context
+     */
     public const ssl = 'ssl';
-    /* @see Phar */
+    /**
+     * Phar context option listing
+     *
+     * @see Phar
+     * @link https://www.php.net/manual/en/context.phar.php
+     * @see  https://github.com/zero-to-prod/stream-context
+     */
     public const phar = 'phar';
-    /* @see Zip */
+    /**
+     * Zip context option listing
+     *
+     * @see Zip
+     * @link https://www.php.net/manual/en/context.zip.php
+     * @see  https://github.com/zero-to-prod/stream-context
+     */
     public const zip = 'zip';
-    /* @see Zlib */
+    /**
+     * Zlib context option listing
+     *
+     * @see Zlib
+     * @link https://www.php.net/manual/en/context.zlib.php
+     * @see  https://github.com/zero-to-prod/stream-context
+     */
     public const zlib = 'zlib';
 
     /**
+     * HTTP context option listing
+     *
      * @var Http $http
-     * @see Http
+     * @see  Http
+     * @link https://www.php.net/manual/en/context.http.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public $http;
     /**
+     * FTP context option listing
+     *
      * @var Ftp $ftp
      * @see Ftp
+     * @link https://www.php.net/manual/en/context.ftp.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public $ftp;
 
     /**
+     * SSL context option listing
+     *
      * @var Ssl $ssl
      * @see Ssl
+     * @link https://www.php.net/manual/en/context.ssl.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public $ssl;
 
     /**
+     * Phar context option listing
+     *
      * @var Phar $phar
      * @see Phar
+     * @link https://www.php.net/manual/en/context.phar.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public $phar;
 
     /**
+     * Zip context option listing
+     *
      * @var Zip $zip
      * @see Zip
+     * @link https://www.php.net/manual/en/context.zip.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public $zip;
 
     /**
+     * Zlib context option listing
+     *
      * @var Zlib $zlib
      * @see Zlib
+     * @link https://www.php.net/manual/en/context.zlib.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public $zlib;
 }

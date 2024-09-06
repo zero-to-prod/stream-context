@@ -27,7 +27,7 @@ use Zerotoprod\StreamContext\Helpers\DataModel;
  *      ->set_ignore_errors(true);
  * ```
  *
- * @see https://www.php.net/manual/en/context.http.php
+ * @link https://www.php.net/manual/en/context.http.php
  * @see https://github.com/zero-to-prod/stream-context
  *
  * @method self set_method(string $method) GET, POST, or any other HTTP method supported by the remote server.
@@ -50,6 +50,9 @@ class Http
      * GET, POST, or any other HTTP method supported by the remote server.
      *
      * Defaults to GET.
+     *
+     * @link https://www.php.net/manual/en/context.http.php
+     * @see https://github.com/zero-to-prod/stream-context
      */
     public const method = 'method';
     /**
@@ -57,6 +60,9 @@ class Http
      * will override other values (such as User-agent:, Host:, and
      * Authentication:), even when following Location: redirects. Thus it
      * is not recommended to set a Host: header, if follow_location is enabled.
+     *
+     * @link https://www.php.net/manual/en/context.http.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public const header = 'header';
     /**
@@ -64,15 +70,24 @@ class Http
      * user-agent is not specified in the header context option above.
      *
      * By default the user_agent php.ini setting is used.
+     *
+     * @link https://www.php.net/manual/en/context.http.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public const user_agent = 'user_agent';
     /**
      * Additional data to be sent after the headers. Typically used with POST
      * or PUT requests.
+     *
+     * @link https://www.php.net/manual/en/context.http.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public const content = 'content';
     /**
      * URI specifying address of proxy server (e.g. tcp://proxy.example.com:5100).
+     *
+     * @link https://www.php.net/manual/en/context.http.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public const proxy = 'proxy';
     /**
@@ -82,17 +97,26 @@ class Http
      * require it.
      *
      * Defaults to false.
+     *
+     * @link https://www.php.net/manual/en/context.http.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public const request_fulluri = 'request_fulluri';
     /**
      * Follow Location header redirects. Set to 0 to disable.
      *
      * Defaults to 1.
+     *
+     * @link https://www.php.net/manual/en/context.http.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public const follow_location = 'follow_location';
     /**
      * The max number of redirects to follow. Value 1 or less means that no
      * redirects are followed.
+     *
+     * @link https://www.php.net/manual/en/context.http.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public const max_redirects = 'max_redirects';
     /**
@@ -100,18 +124,27 @@ class Http
      *
      * Defaults to 1.1 as of PHP 8.0.0; prior to that version the default
      * was 1.0.
+     *
+     * @link https://www.php.net/manual/en/context.http.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public const protocol_version = 'protocol_version';
     /**
      * Read timeout in seconds, specified by a float (e.g. 10.5).
      *
      * By default the default_socket_timeout php.ini setting is used.
+     *
+     * @link https://www.php.net/manual/en/context.http.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public const timeout = 'timeout';
     /**
      * Fetch the content even on failure status codes.
      *
      * Defaults to false.
+     *
+     * @link https://www.php.net/manual/en/context.http.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public const ignore_errors = 'ignore_errors';
 
@@ -121,6 +154,9 @@ class Http
      * Defaults to GET.
      *
      * @var string $method
+     *
+     * @link https://www.php.net/manual/en/context.http.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public $method = 'GET';
 
@@ -131,6 +167,9 @@ class Http
      * is not recommended to set a Host: header, if follow_location is enabled.
      *
      * @var array|string $header
+     *
+     * @link https://www.php.net/manual/en/context.http.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public $header;
 
@@ -141,6 +180,9 @@ class Http
      * By default the user_agent php.ini setting is used.
      *
      * @var string $user_agent
+     *
+     * @link https://www.php.net/manual/en/context.http.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public $user_agent;
 
@@ -149,6 +191,9 @@ class Http
      * or PUT requests.
      *
      * @var string $content
+     *
+     * @link https://www.php.net/manual/en/context.http.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public $content;
 
@@ -156,6 +201,9 @@ class Http
      * URI specifying address of proxy server (e.g. tcp://proxy.example.com:5100).
      *
      * @var string $proxy
+     *
+     * @link https://www.php.net/manual/en/context.http.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public $proxy;
 
@@ -168,6 +216,9 @@ class Http
      * Defaults to false.
      *
      * @var bool $request_fulluri
+     *
+     * @link https://www.php.net/manual/en/context.http.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public $request_fulluri = false;
 
@@ -177,6 +228,9 @@ class Http
      * Defaults to 1.
      *
      * @var int $follow_location
+     *
+     * @link https://www.php.net/manual/en/context.http.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public $follow_location = 1;
 
@@ -185,6 +239,9 @@ class Http
      * redirects are followed.
      *
      * @var int $max_redirects
+     *
+     * @link https://www.php.net/manual/en/context.http.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public $max_redirects;
 
@@ -195,6 +252,9 @@ class Http
      * was 1.0.
      *
      * @var float $protocol_version
+     *
+     * @link https://www.php.net/manual/en/context.http.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public $protocol_version = 1.1;
 
@@ -204,6 +264,9 @@ class Http
      * By default the default_socket_timeout php.ini setting is used.
      *
      * @var float $timeout
+     *
+     * @link https://www.php.net/manual/en/context.http.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public $timeout;
 
@@ -213,6 +276,9 @@ class Http
      * Defaults to false.
      *
      * @var bool $ignore_errors
+     *
+     * @link https://www.php.net/manual/en/context.http.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public $ignore_errors = false;
 }

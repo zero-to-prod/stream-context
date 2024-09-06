@@ -39,19 +39,29 @@ class Ftp
      * Applies to write mode (uploading) only.
      *
      * Defaults to false.
-     */
+     *
+     * @link https://www.php.net/manual/en/context.ftp.php
+     * @see  https://github.com/zero-to-prod/stream-context
+ * @link https://www.php.net/manual/en/context.ssl.php
+ * @see https://github.com/zero-to-prod/stream-context
     public const overwrite = 'overwrite';
     /**
      * File offset at which to begin transfer.
      * Applies to read mode (downloading) only.
      *
      * Defaults to 0 (Beginning of File).
+     *
+     * @link https://www.php.net/manual/en/context.ftp.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public const resume_pos = 'resume_pos';
     /**
      * Proxy FTP request via http proxy server.
      * Applies to file read operations only.
      * Ex: tcp://squid.example.com:8000.
+     *
+     * @link https://www.php.net/manual/en/context.ftp.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public const proxy = 'proxy';
 
@@ -62,6 +72,9 @@ class Ftp
      * Defaults to false.
      *
      * @var bool $overwrite
+     *
+     * @link https://www.php.net/manual/en/context.ftp.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public $overwrite = false;
 
@@ -72,6 +85,9 @@ class Ftp
      * Defaults to 0 (Beginning of File).
      *
      * @var int $resume_pos
+     *
+     * @link https://www.php.net/manual/en/context.ftp.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public $resume_pos = 0;
 
@@ -81,6 +97,9 @@ class Ftp
      * Ex: tcp://squid.example.com:8000.
      *
      * @var string $proxy
+     *
+     * @link https://www.php.net/manual/en/context.ftp.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public $proxy;
 }

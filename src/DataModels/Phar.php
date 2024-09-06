@@ -16,7 +16,7 @@ use Zerotoprod\StreamContext\Helpers\DataModel;
  * ```
  *
  * @link https://www.php.net/manual/en/context.phar.php
- * @see https://github.com/zero-to-prod/stream-context
+ * @see  https://github.com/zero-to-prod/stream-context
  *
  * @method self set_compress(int $compress) One of Phar compression constants.
  * @method self set_metadata(mixed $metadata) Phar metadata.
@@ -27,10 +27,16 @@ class Phar
 
     /**
      * One of Phar compression constants.
+     *
+     * @link https://www.php.net/manual/en/context.phar.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public const compress = 'compress';
     /**
      * Phar metadata. See Phar::setMetadata().
+     *
+     * @link https://www.php.net/manual/en/context.phar.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public const metadata = 'metadata';
 
@@ -38,6 +44,9 @@ class Phar
      * One of Phar compression constants.
      *
      * @var int $compress
+     *
+     * @link https://www.php.net/manual/en/context.phar.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public $compress;
 
@@ -45,6 +54,9 @@ class Phar
      * Phar metadata. See Phar::setMetadata().
      *
      * @var mixed $metadata
+     *
+     * @link https://www.php.net/manual/en/context.phar.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public $metadata;
 }

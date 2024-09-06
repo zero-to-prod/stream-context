@@ -23,6 +23,9 @@ class Zip
 
     /**
      * Used to specify password used for encrypted archive.
+     *
+     * @link https://www.php.net/manual/en/context.zip.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public const password = 'password';
 
@@ -30,6 +33,9 @@ class Zip
      * Used to specify password used for encrypted archive.
      *
      * @var string $password
+     *
+     * @link https://www.php.net/manual/en/context.zip.php
+     * @see  https://github.com/zero-to-prod/stream-context
      */
     public $password;
 }
