@@ -50,39 +50,51 @@ class Options
 {
     use DataModel;
 
+    /* @see Http */
     public const http = 'http';
+    /* @see Ftp */
     public const ftp = 'ftp';
+    /* @see Ssl */
     public const ssl = 'ssl';
+    /* @see Phar */
     public const phar = 'phar';
+    /* @see Zip */
     public const zip = 'zip';
+    /* @see Zlib */
     public const zlib = 'zlib';
 
     /**
      * @var Http $http
+     * @see Http
      */
     public $http;
     /**
      * @var Ftp $ftp
+     * @see Ftp
      */
     public $ftp;
 
     /**
      * @var Ssl $ssl
+     * @see Ssl
      */
     public $ssl;
 
     /**
      * @var Phar $phar
+     * @see Phar
      */
     public $phar;
 
     /**
      * @var Zip $zip
+     * @see Zip
      */
     public $zip;
 
     /**
      * @var Zlib $zlib
+     * @see Zlib
      */
     public $zlib;
 }

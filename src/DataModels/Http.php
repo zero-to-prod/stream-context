@@ -46,16 +46,73 @@ class Http
 {
     use DataModel;
 
+    /**
+     * GET, POST, or any other HTTP method supported by the remote server.
+     *
+     * Defaults to GET.
+     */
     public const method = 'method';
+    /**
+     * Additional headers to be sent during request. Values in this option
+     * will override other values (such as User-agent:, Host:, and
+     * Authentication:), even when following Location: redirects. Thus it
+     * is not recommended to set a Host: header, if follow_location is enabled.
+     */
     public const header = 'header';
+    /**
+     * Value to send with User-Agent: header. This value will only be used if
+     * user-agent is not specified in the header context option above.
+     *
+     * By default the user_agent php.ini setting is used.
+     */
     public const user_agent = 'user_agent';
+    /**
+     * Additional data to be sent after the headers. Typically used with POST
+     * or PUT requests.
+     */
     public const content = 'content';
+    /**
+     * URI specifying address of proxy server (e.g. tcp://proxy.example.com:5100).
+     */
     public const proxy = 'proxy';
+    /**
+     * When set to true, the entire URI will be used when constructing the
+     * request (e.g. GET http://www.example.com/path/to/file.html HTTP/1.0).
+     * While this is a non-standard request format, some proxy servers
+     * require it.
+     *
+     * Defaults to false.
+     */
     public const request_fulluri = 'request_fulluri';
+    /**
+     * Follow Location header redirects. Set to 0 to disable.
+     *
+     * Defaults to 1.
+     */
     public const follow_location = 'follow_location';
+    /**
+     * The max number of redirects to follow. Value 1 or less means that no
+     * redirects are followed.
+     */
     public const max_redirects = 'max_redirects';
+    /**
+     * HTTP protocol version.
+     *
+     * Defaults to 1.1 as of PHP 8.0.0; prior to that version the default
+     * was 1.0.
+     */
     public const protocol_version = 'protocol_version';
+    /**
+     * Read timeout in seconds, specified by a float (e.g. 10.5).
+     *
+     * By default the default_socket_timeout php.ini setting is used.
+     */
     public const timeout = 'timeout';
+    /**
+     * Fetch the content even on failure status codes.
+     *
+     * Defaults to false.
+     */
     public const ignore_errors = 'ignore_errors';
 
     /**

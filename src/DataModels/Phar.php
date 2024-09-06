@@ -25,7 +25,13 @@ class Phar
 {
     use DataModel;
 
+    /**
+     * One of Phar compression constants.
+     */
     public const compress = 'compress';
+    /**
+     * Phar metadata. See Phar::setMetadata().
+     */
     public const metadata = 'metadata';
 
     /**

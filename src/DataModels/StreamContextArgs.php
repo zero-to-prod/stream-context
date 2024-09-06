@@ -37,7 +37,14 @@ class StreamContextArgs
 {
     use DataModel;
 
+    /**
+     * @var Options $Options
+     * @see Options
+     */
     public const Options = 'Options';
+    /**
+     * Must be an associative array in the format $arr['parameter'] = $value, or null
+     */
     public const params = 'params';
 
     /** @var Options $Options */

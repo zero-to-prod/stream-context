@@ -34,8 +34,25 @@ class Ftp
 {
     use DataModel;
 
+    /**
+     * Allow overwriting of already existing files on remote server.
+     * Applies to write mode (uploading) only.
+     *
+     * Defaults to false.
+     */
     public const overwrite = 'overwrite';
+    /**
+     * File offset at which to begin transfer.
+     * Applies to read mode (downloading) only.
+     *
+     * Defaults to 0 (Beginning of File).
+     */
     public const resume_pos = 'resume_pos';
+    /**
+     * Proxy FTP request via http proxy server.
+     * Applies to file read operations only.
+     * Ex: tcp://squid.example.com:8000.
+     */
     public const proxy = 'proxy';
 
     /**

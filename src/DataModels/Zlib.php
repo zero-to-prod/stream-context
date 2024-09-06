@@ -21,6 +21,9 @@ class Zlib
 {
     use DataModel;
 
+    /**
+     * Used to specify the compression level (0 - 9).
+     */
     public const level = 'level';
 
     /**

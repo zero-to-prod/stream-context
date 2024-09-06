@@ -21,6 +21,9 @@ class Zip
 {
     use DataModel;
 
+    /**
+     * Used to specify password used for encrypted archive.
+     */
     public const password = 'password';
 
     /**
