@@ -10,7 +10,7 @@ use Zerotoprod\StreamContext\StreamContext;
  *
  * Example:
  * ```
- *  StreamContextArgs::new()
+ *  Context::new()
  *      ->set_Options(
  *          Options::new()->set_ssl(
  *              Ssl::new()->set_peer_name('example.com')
@@ -22,7 +22,7 @@ use Zerotoprod\StreamContext\StreamContext;
  *      ]);
  *  ```
  *
- * @param  StreamContextArgs|array  $Args
+ * @param  Context|array  $Args
  *
  * @return resource
  *
@@ -30,12 +30,21 @@ use Zerotoprod\StreamContext\StreamContext;
  * @link https://www.php.net/manual/en/function.stream-context-create.php
  * @see  https://github.com/zero-to-prod/stream-context
  *
- * @method self set_Options(Options $Options)
+ * @method self set_context(resource $context) stream context resource
+ * @method self set_Options(Options $Options) Must be an associative array in the format $arr['parameter'] = $value, or null
  * @method self set_params(array $params) Must be an associative array in the format $arr['parameter'] = $value, or null
  */
-class StreamContextArgs
+class Context
 {
     use DataModel;
+
+    /**
+     * The created stream context resource.
+     *
+     * @link https://php.net/manual/en/function.stream-context-create.php
+     * @see  https://github.com/zero-to-prod/stream-context
+     */
+    public const context = 'context';
 
     /**
      * @see  Options
@@ -50,6 +59,16 @@ class StreamContextArgs
      * @see  https://github.com/zero-to-prod/stream-context
      */
     public const params = 'params';
+
+    /**
+     * The created stream context resource.
+     *
+     * @var resource $context
+     *
+     * @link https://php.net/manual/en/function.stream-context-create.php
+     * @see  https://github.com/zero-to-prod/stream-context
+     */
+    public $context;
 
     /**
      * @var Options $Options
@@ -68,26 +87,6 @@ class StreamContextArgs
      * @see  https://github.com/zero-to-prod/stream-context
      */
     public $params;
-
-    /**
-     * Creates a stream context
-     * Creates and returns a stream context with any options supplied in options preset.
-     * Example:
-     * ```
-     *  StreamContext::from()
-     *      ->set_Options(Options::new()->set_ssl(Ssl::new()->set_peer_name($url)))
-     *      ->create()
-     * ```
-     *
-     * @return resource
-     *
-     * @see StreamContext::create()
-     * @see https://github.com/zero-to-prod/stream-context
-     */
-    public function create()
-    {
-        return StreamContext::create($this);
-    }
 
     /**
      * Retrieve the default stream context

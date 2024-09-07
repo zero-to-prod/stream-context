@@ -2,7 +2,8 @@
 
 namespace Zerotoprod\StreamContext;
 
-use Zerotoprod\StreamContext\DataModels\StreamContextArgs;
+use Zerotoprod\StreamContext\DataModels\Context;
+use Zerotoprod\StreamContext\DataModels\Options;
 
 /**
  * Class StreamContext
@@ -16,7 +17,7 @@ use Zerotoprod\StreamContext\DataModels\StreamContextArgs;
  *   array of parameters.
  *
  * @link https://www.php.net/manual/en/function.stream-context-create.php
- * @see https://github.com/zero-to-prod/stream-context
+ * @see  https://github.com/zero-to-prod/stream-context
  */
 class StreamContext
 {
@@ -27,61 +28,35 @@ class StreamContext
      * ```
      *  StreamContext::create();
      *  // or
-     *  StreamContext::create(
-     *      StreamContextArgs::new()
-     *          ->set_Options(
-     *              Options::new()->set_ssl(
-     *                  Ssl::new()->set_peer_name('example.com')
-     *              )
-     *          )
-     *          ->set_params([
-     *              'notification' => 'stream_notification_callback',
-     *              'options' => []
-     *          ])
-     *  );
+     *  StreamContext::create([
+     *      Options::http => [
+     *          Http::method => 'GET',
+     *          Http::header => "Accept-language: en\r\n"."Cookie: foo=bar",
+     *          Http::proxy => 'proxy'
+     *      ],
+     *      ['options']
+     *  ]);
      *  ```
      *
-     * @param  StreamContextArgs|array  $Args
+     * @param  Options|array  $options
+     * @param  array          $params
      *
-     * @return resource
-     * @link https://www.php.net/manual/en/function.stream-context-create.php
-     * @see https://github.com/zero-to-prod/stream-context
-     */
-    public static function create($Args = null)
-    {
-        if ($Args instanceof StreamContextArgs) {
-            return stream_context_create(
-                $Args->Options->toArray(),
-                $Args->params
-            );
-        }
-
-        return !$Args
-            ? stream_context_create()
-            : stream_context_create(
-                is_array($Args)
-                    ? StreamContextArgs::from($Args)->Options->toArray()
-                    : $Args->Options->toArray(),
-                $Args->params
-            );
-    }
-
-    /**
-     * Creates a stream context
-     * Creates and returns a stream context with any options supplied in options preset.
-     * Example:
-     * ```
-     *  StreamContext::from()
-     *      ->set_Options(Options::new()->set_ssl(Ssl::new()->set_peer_name($url)))
-     *      ->create()
-     *  ```
+     * @return Context
      *
-     * @return StreamContextArgs
      * @link https://www.php.net/manual/en/function.stream-context-create.php
-     * @see https://github.com/zero-to-prod/stream-context
+     * @see  https://github.com/zero-to-prod/stream-context
      */
-    public static function from(): StreamContextArgs
+    public static function create($options = [], array $params = []): Context
     {
-        return StreamContextArgs::new();
+        return Context::from([
+            Context::Options => $options,
+            Context::context => stream_context_create(
+                $options instanceof Options
+                    ? $options->toArray()
+                    : $options,
+                $params
+            ),
+            Context::params => $params
+        ]);
     }
 }

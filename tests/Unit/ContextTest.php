@@ -3,32 +3,32 @@
 namespace Tests\Unit;
 
 use Tests\TestCase;
-use Zerotoprod\StreamContext\DataModels\Ftp;
+use Zerotoprod\StreamContext\DataModels\Context;
 use Zerotoprod\StreamContext\DataModels\Http;
 use Zerotoprod\StreamContext\DataModels\Options;
-use Zerotoprod\StreamContext\DataModels\StreamContextArgs;
+use Zerotoprod\StreamContext\StreamContext;
 
-class StreamContextArgsTest extends TestCase
+class ContextTest extends TestCase
 {
 
     /**
      * @test
      *
-     * @see StreamContextArgs::getDefault()
+     * @see Context::getDefault()
      */
-    public function stream_context_get_default(): void
+    public function from_Options(): void
     {
-        $StreamContextArgs = StreamContextArgs::from([
-            StreamContextArgs::Options => [
+        $Context = StreamContext::create(
+            Options::from([
                 Options::http => [
                     Http::method => 'GET',
                     Http::header => "Accept-language: en\r\n"."Cookie: foo=bar",
                     Http::proxy => 'proxy'
                 ]
-            ]
-        ]);
+            ])
+        );
 
-        $subject = $StreamContextArgs->getDefault();
+        $subject = $Context->getDefault();
 
         $this->assertNotNull($subject);
     }
@@ -36,16 +36,31 @@ class StreamContextArgsTest extends TestCase
     /**
      * @test
      *
-     * @see StreamContextArgs::getDefault()
+     * @see Context::getDefault()
+     */
+    public function from_array(): void
+    {
+        $Context = StreamContext::create([
+            Options::http => [
+                Http::method => 'GET',
+                Http::header => "Accept-language: en\r\n"."Cookie: foo=bar",
+                Http::proxy => 'proxy'
+            ]
+        ]);
+
+        $subject = $Context->getDefault();
+
+        $this->assertNotNull($subject);
+    }
+
+    /**
+     * @test
+     *
+     * @see Context::getDefault()
      */
     public function stream_context_get_default_with_setters(): void
     {
-        Ftp::new()
-            ->set_overwrite(true)
-            ->set_resume_pos(1024)
-            ->set_proxy('tcp://proxy.example.com:8000');
-
-        $StreamContextArgs = StreamContextArgs::new()
+        $Context = Context::new()
             ->set_Options(
                 Options::new()->set_http(
                     Http::new()
@@ -55,7 +70,7 @@ class StreamContextArgsTest extends TestCase
                 )
             )->set_params(['s' => 1]);
 
-        $subject = $StreamContextArgs->getDefault();
+        $subject = $Context->getDefault();
 
         $this->assertNotNull($subject);
     }
@@ -63,12 +78,12 @@ class StreamContextArgsTest extends TestCase
     /**
      * @test
      *
-     * @see StreamContextArgs::getOptions()
+     * @see Context::getOptions()
      */
     public function stream_context_get_options(): void
     {
-        $StreamContextArgs = StreamContextArgs::from([
-            StreamContextArgs::Options => [
+        $Context = Context::from([
+            Context::Options => [
                 Options::http => [
                     Http::method => 'GET',
                     Http::proxy => 'proxy'
@@ -76,7 +91,7 @@ class StreamContextArgsTest extends TestCase
             ]
         ]);
 
-        $subject = $StreamContextArgs->getOptions();
+        $subject = $Context->getOptions();
 
         $this->assertEquals('GET', $subject['http']['method']);
         $this->assertEquals('proxy', $subject['http']['proxy']);
@@ -85,12 +100,12 @@ class StreamContextArgsTest extends TestCase
     /**
      * @test
      *
-     * @see StreamContextArgs::getParams()
+     * @see Context::getParams()
      */
     public function stream_context_get_params(): void
     {
-        $StreamContextArgs = StreamContextArgs::from([
-            StreamContextArgs::Options => [
+        $Context = Context::from([
+            Context::Options => [
                 Options::http => [
                     Http::method => 'GET',
                     Http::proxy => 'proxy'
@@ -98,7 +113,7 @@ class StreamContextArgsTest extends TestCase
             ]
         ]);
 
-        $subject = $StreamContextArgs->getParams();
+        $subject = $Context->getParams();
 
         $this->assertEquals('GET', $subject['options']['http']['method']);
         $this->assertEquals('proxy', $subject['options']['http']['proxy']);
@@ -107,12 +122,12 @@ class StreamContextArgsTest extends TestCase
     /**
      * @test
      *
-     * @see StreamContextArgs::setDefault()
+     * @see Context::setDefault()
      */
     public function stream_context_set_default(): void
     {
-        $StreamContextArgs = StreamContextArgs::from([
-            StreamContextArgs::Options => [
+        $Context = Context::from([
+            Context::Options => [
                 Options::http => [
                     Http::method => 'GET',
                     Http::header => "Accept-language: en\r\n"."Cookie: foo=bar",
@@ -121,8 +136,8 @@ class StreamContextArgsTest extends TestCase
             ]
         ]);
 
-        $StreamContextArgs->setDefault();
+        $Context->setDefault();
 
-        $this->assertEquals(stream_context_get_default(), $StreamContextArgs->getDefault());
+        $this->assertEquals(stream_context_get_default(), $Context->getDefault());
     }
 }

@@ -21,9 +21,8 @@ composer require zerotoprod/stream-context
 
 ```php
 use Zerotoprod\StreamContext\StreamContext;
-use Zerotoprod\StreamContext\DataModels\StreamContextArgs;
 use Zerotoprod\StreamContext\DataModels\Options;
-use Zerotoprod\StreamContext\DataModels\Ssl;
+use Zerotoprod\StreamContext\DataModels\Http;
 
 $client = stream_socket_client(
     'ssl://neverssl.com:443',
@@ -31,22 +30,17 @@ $client = stream_socket_client(
     $error_message,
     30,
     STREAM_CLIENT_CONNECT,
-    StreamContext::create(
-        StreamContextArgs::new()
-            ->set_Options(
-                Options::new()->set_ssl(
-                    Ssl::new()->set_peer_name('neverssl.com')
-                )
-            )
-    )
+    StreamContext::create([
+        Options::http => [
+            Http::method => 'GET',
+            Http::header => "Accept-language: en\r\n"."Cookie: foo=bar",
+            Http::proxy => 'proxy'
+        ],
+        ['options']
+    ])->context
 );
 
 fclose($client);
-
-// Alternative
-StreamContext::from()
-    ->set_Options(Options::new()->set_ssl(Ssl::new()->set_peer_name($url)))
-    ->create();
 ```
 
 ## Supported Protocols
