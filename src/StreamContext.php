@@ -51,7 +51,7 @@ class StreamContext
         return Context::from([
             Context::Options => $options,
             Context::context => stream_context_create(
-                $options instanceof Options
+                is_object($options) && method_exists($options, 'toArray')
                     ? $options->toArray()
                     : $options,
                 $params
