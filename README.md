@@ -1,8 +1,12 @@
 # `Zerotoprod\StreamContext`
+
 [![Repo](https://img.shields.io/badge/github-gray?logo=github)](https://github.com/zero-to-prod/stream-context)
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/zero-to-prod/stream-context.svg)](https://packagist.org/packages/zero-to-prod/stream-context)
-![test](https://github.com/zero-to-prod/stream-context/actions/workflows/phpunit.yml/badge.svg)
-![Downloads](https://img.shields.io/packagist/dt/zero-to-prod/stream-context.svg?style=flat-square&#41;]&#40;https://packagist.org/packages/zero-to-prod/stream-context&#41)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/zero-to-prod/stream-context/phpunit.yml?label=tests)](https://github.com/zero-to-prod/stream-context/actions)
+[![Packagist Downloads](https://img.shields.io/packagist/dt/zero-to-prod/stream-context?color=blue)](https://packagist.org/packages/zero-to-prod/stream-context/stats)
+[![Packagist Version](https://img.shields.io/packagist/v/zero-to-prod/stream-context?color=f28d1a)](https://packagist.org/packages/zero-to-prod/stream-context)
+[![GitHub repo size](https://img.shields.io/github/repo-size/zero-to-prod/stream-context)](https://github.com/zero-to-prod/stream-context)
+[![License](https://img.shields.io/packagist/l/zero-to-prod/stream-context?color=red)](https://github.com/zero-to-prod/stream-context/blob/main/LICENSE.md)
+
 
 
 A wrapper for the [`stream_context_create()`](https://www.php.net/manual/en/function.stream-context-create.php) method.
