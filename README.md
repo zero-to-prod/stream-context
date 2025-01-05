@@ -1,13 +1,12 @@
 # `Zerotoprod\StreamContext`
 
 [![Repo](https://img.shields.io/badge/github-gray?logo=github)](https://github.com/zero-to-prod/stream-context)
-[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/zero-to-prod/stream-context/phpunit.yml?label=tests)](https://github.com/zero-to-prod/stream-context/actions)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/zero-to-prod/stream-context/test.yml?label=tests)](https://github.com/zero-to-prod/stream-context/actions)
 [![Packagist Downloads](https://img.shields.io/packagist/dt/zero-to-prod/stream-context?color=blue)](https://packagist.org/packages/zero-to-prod/stream-context/stats)
 [![Packagist Version](https://img.shields.io/packagist/v/zero-to-prod/stream-context?color=f28d1a)](https://packagist.org/packages/zero-to-prod/stream-context)
 [![GitHub repo size](https://img.shields.io/github/repo-size/zero-to-prod/stream-context)](https://github.com/zero-to-prod/stream-context)
 [![License](https://img.shields.io/packagist/l/zero-to-prod/stream-context?color=red)](https://github.com/zero-to-prod/stream-context/blob/main/LICENSE.md)
-
-
+[![Hits-of-Code](https://hitsofcode.com/github/zero-to-prod/stream-context?branch=main)](https://hitsofcode.com/github/zero-to-prod/stream-context/view?branch=main)
 
 A wrapper for the [`stream_context_create()`](https://www.php.net/manual/en/function.stream-context-create.php) method.
 

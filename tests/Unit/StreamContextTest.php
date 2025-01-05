@@ -11,7 +11,7 @@ use Zerotoprod\StreamContext\StreamContext;
 
 class StreamContextTest extends TestCase
 {
-    public function urls(): array
+    public static function urls(): array
     {
         return [
             'neverssl.com' => ['neverssl.com'],
