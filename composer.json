@@ -37,7 +37,7 @@
     "docker": "runs a docker container"
   },
   "require": {
-    "php": "^7.1",
+    "php": ">=7.1",
     "ext-openssl": "*",
     "zero-to-prod/dynamic-setter": "^71.0",
     "zero-to-prod/data-model": "^71.0",
@@ -54,6 +54,6 @@
     }
   },
   "require-dev": {
-    "phpunit/phpunit": "^7.0"
+    "phpunit/phpunit": "*"
   }
 }
