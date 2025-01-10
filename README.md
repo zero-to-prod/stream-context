@@ -17,7 +17,7 @@ It provides classes that define all the options for this method.
 To install this package run composer install:
 
 ```shell
-composer require zerotoprod/stream-context
+composer require zero-to-prod/stream-context
 ```
 
 ## Usage
