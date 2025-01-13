@@ -1,4 +1,4 @@
-# `Zerotoprod\StreamContext`
+# Zerotoprod\StreamContext
 
 [![Repo](https://img.shields.io/badge/github-gray?logo=github)](https://github.com/zero-to-prod/stream-context)
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/zero-to-prod/stream-context/test.yml?label=tests)](https://github.com/zero-to-prod/stream-context/actions)
