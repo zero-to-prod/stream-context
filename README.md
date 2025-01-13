@@ -36,8 +36,6 @@ It provides classes that define all the options for this method.
 
 ## Installation
 
-## Installation
-
 Install `Zerotoprod\StreamContext` via [Composer](https://getcomposer.org/):
 
 ```bash
