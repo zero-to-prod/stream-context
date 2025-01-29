@@ -76,7 +76,7 @@ class Context
      * @link https://www.php.net/manual/en/context.php
      * @see  https://github.com/zero-to-prod/stream-context
      */
-    public $Options;
+    public Options $Options;
 
     /**
      * Must be an associative array in the format $arr['parameter'] = $value, or null
