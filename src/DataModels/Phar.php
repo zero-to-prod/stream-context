@@ -15,11 +15,11 @@ use Zerotoprod\StreamContext\Helpers\DataModel;
  *      ->set_metadata(['author' => 'John Doe']);
  * ```
  *
- * @link https://www.php.net/manual/en/context.phar.php
- * @see  https://github.com/zero-to-prod/stream-context
+ * @see https://www.php.net/manual/en/context.phar.php
  *
  * @method self set_compress(int $compress) One of Phar compression constants.
  * @method self set_metadata(mixed $metadata) Phar metadata.
+ * @link https://github.com/zero-to-prod/stream-context
  */
 class Phar
 {
@@ -28,15 +28,15 @@ class Phar
     /**
      * One of Phar compression constants.
      *
-     * @link https://www.php.net/manual/en/context.phar.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.phar.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public const compress = 'compress';
     /**
      * Phar metadata. See Phar::setMetadata().
      *
-     * @link https://www.php.net/manual/en/context.phar.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.phar.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public const metadata = 'metadata';
 
@@ -45,8 +45,8 @@ class Phar
      *
      * @var int $compress
      *
-     * @link https://www.php.net/manual/en/context.phar.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.phar.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public $compress;
 
@@ -55,8 +55,8 @@ class Phar
      *
      * @var mixed $metadata
      *
-     * @link https://www.php.net/manual/en/context.phar.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.phar.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public $metadata;
 }

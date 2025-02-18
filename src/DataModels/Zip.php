@@ -12,10 +12,10 @@ use Zerotoprod\StreamContext\Helpers\DataModel;
  *  Zip::new()->set_password('secret');
  * ```
  *
- * @link https://www.php.net/manual/en/context.zip.php
- * @see https://github.com/zero-to-prod/stream-context
+ * @see https://www.php.net/manual/en/context.zip.php
  *
  * @method self set_password(string $password) Used to specify password used for encrypted archive.
+ * @link https://github.com/zero-to-prod/stream-context
  */
 class Zip
 {
@@ -24,8 +24,8 @@ class Zip
     /**
      * Used to specify password used for encrypted archive.
      *
-     * @link https://www.php.net/manual/en/context.zip.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.zip.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public const password = 'password';
 
@@ -34,8 +34,8 @@ class Zip
      *
      * @var string $password
      *
-     * @link https://www.php.net/manual/en/context.zip.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.zip.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public $password;
 }

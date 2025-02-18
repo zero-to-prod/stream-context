@@ -39,8 +39,7 @@ use Zerotoprod\StreamContext\Helpers\DataModel;
  *      ->set_security_level(2);
  * ```
  *
- * @link https://www.php.net/manual/en/context.ssl.php
- * @see https://github.com/zero-to-prod/stream-context
+ * @see https://www.php.net/manual/en/context.ssl.php
  *
  * @method self set_peer_name(string $peer_name) Peer name to be used. If this value is not set, then the name is guessed based on the hostname used when opening the stream.
  * @method self set_verify_peer(bool $verify_peer) Require verification of SSL certificate used.
@@ -59,6 +58,7 @@ use Zerotoprod\StreamContext\Helpers\DataModel;
  * @method self set_disable_compression(bool $disable_compression) If set, disable TLS compression. This can help mitigate the CRIME attack vector.
  * @method self set_peer_fingerprint(string|array $peer_fingerprint) Aborts when the remote certificate digest doesn't match the specified hash.
  * @method self set_security_level(int $security_level) Sets the security level. If not specified the library default security level is used. The security levels are described in » SSL_CTX_get_security_level(3).
+ * @link https://github.com/zero-to-prod/stream-context
  */
 class Ssl
 {
@@ -68,8 +68,8 @@ class Ssl
      * Peer name to be used. If this value is not set, then the name is
      * guessed based on the hostname used when opening the stream.
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public const peer_name = 'peer_name';
     /**
@@ -77,8 +77,8 @@ class Ssl
      *
      * Defaults to true.
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public const verify_peer = 'verify_peer';
     /**
@@ -86,8 +86,8 @@ class Ssl
      *
      * Defaults to true.
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public const verify_peer_name = 'verify_peer_name';
     /**
@@ -95,8 +95,8 @@ class Ssl
      *
      * Defaults to false.
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public const allow_self_signed = 'allow_self_signed';
     /**
@@ -104,8 +104,8 @@ class Ssl
      * be used with the verify_peer context option to authenticate the identity
      * of the remote peer.
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public const cafile = 'cafile';
     /**
@@ -113,8 +113,8 @@ class Ssl
      * the directory pointed to by capath is searched for a suitable
      * certificate. capath must be a correctly hashed certificate directory.
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public const capath = 'capath';
     /**
@@ -123,23 +123,23 @@ class Ssl
      * contain the certificate chain of issuers. The private key also may be
      * contained in a separate file specified by local_pk.
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public const local_cert = 'local_cert';
     /**
      * Path to local private key file on filesystem in case of separate files
      * for certificate (local_cert) and private key.
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public const local_pk = 'local_pk';
     /**
      * Passphrase with which your local_cert file was encoded.
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public const passphrase = 'passphrase';
     /**
@@ -147,8 +147,8 @@ class Ssl
      *
      * Defaults to no verification.
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public const verify_depth = 'verify_depth';
     /**
@@ -157,39 +157,39 @@ class Ssl
      *
      * Defaults to DEFAULT.
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public const ciphers = 'ciphers';
     /**
      * If set to true a peer_certificate context option will be created
      * containing the peer certificate.
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public const capture_peer_cert = 'capture_peer_cert';
     /**
      * If set to true a peer_certificate_chain context option will be created
      * containing the certificate chain.
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public const capture_peer_cert_chain = 'capture_peer_cert_chain';
     /**
      * If set to true server name indication will be enabled. Enabling SNI
      * allows multiple certificates on the same IP address.
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public const SNI_enabled = 'SNI_enabled';
     /**
      * If set, disable TLS compression. This can help mitigate the CRIME attack vector.
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public const disable_compression = 'disable_compression';
     /**
@@ -201,8 +201,8 @@ class Ssl
      * When an array is used, the keys indicate the hashing algorithm name and
      * each corresponding value is the expected digest.
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public const peer_fingerprint = 'peer_fingerprint';
     /**
@@ -211,8 +211,8 @@ class Ssl
      *
      * Available as of PHP 7.2.0 and OpenSSL 1.1.0.
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public const security_level = 'security_level';
 
@@ -222,8 +222,8 @@ class Ssl
      *
      * @var string $peer_name
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public $peer_name;
 
@@ -234,8 +234,8 @@ class Ssl
      *
      * @var bool $verify_peer
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public $verify_peer = true;
 
@@ -246,8 +246,8 @@ class Ssl
      *
      * @var bool $verify_peer_name
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public $verify_peer_name = true;
 
@@ -258,8 +258,8 @@ class Ssl
      *
      * @var bool $allow_self_signed
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public $allow_self_signed = false;
 
@@ -270,8 +270,8 @@ class Ssl
      *
      * @var string $cafile
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public $cafile;
 
@@ -282,8 +282,8 @@ class Ssl
      *
      * @var string $capath
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public $capath;
 
@@ -295,8 +295,8 @@ class Ssl
      *
      * @var string $local_cert
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public $local_cert;
 
@@ -306,8 +306,8 @@ class Ssl
      *
      * @var string $local_pk
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public $local_pk;
 
@@ -316,8 +316,8 @@ class Ssl
      *
      * @var string $passphrase
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public $passphrase;
 
@@ -328,8 +328,8 @@ class Ssl
      *
      * @var int $verify_depth
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public $verify_depth;
 
@@ -341,8 +341,8 @@ class Ssl
      *
      * @var string $ciphers
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public $ciphers = 'DEFAULT';
 
@@ -352,8 +352,8 @@ class Ssl
      *
      * @var bool $capture_peer_cert
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public $capture_peer_cert;
 
@@ -363,8 +363,8 @@ class Ssl
      *
      * @var bool $capture_peer_cert_chain
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public $capture_peer_cert_chain;
 
@@ -374,8 +374,8 @@ class Ssl
      *
      * @var bool $SNI_enabled
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public $SNI_enabled;
 
@@ -384,8 +384,8 @@ class Ssl
      *
      * @var bool $disable_compression
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public $disable_compression;
 
@@ -400,8 +400,8 @@ class Ssl
      *
      * @var string|array $peer_fingerprint
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public $peer_fingerprint;
 
@@ -413,8 +413,8 @@ class Ssl
      *
      * @var int $security_level
      *
-     * @link https://www.php.net/manual/en/context.ssl.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/context.ssl.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public $security_level;
 }

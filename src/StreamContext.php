@@ -16,8 +16,8 @@ use Zerotoprod\StreamContext\DataModels\Options;
  * - The method accepts an `Options` object for protocol-specific settings and an optional
  *   array of parameters.
  *
- * @link https://www.php.net/manual/en/function.stream-context-create.php
- * @see  https://github.com/zero-to-prod/stream-context
+ * @see https://www.php.net/manual/en/function.stream-context-create.php
+ * @link https://github.com/zero-to-prod/stream-context
  */
 class StreamContext
 {
@@ -43,8 +43,8 @@ class StreamContext
      *
      * @return Context
      *
-     * @link https://www.php.net/manual/en/function.stream-context-create.php
-     * @see  https://github.com/zero-to-prod/stream-context
+     * @see https://www.php.net/manual/en/function.stream-context-create.php
+     * @link https://github.com/zero-to-prod/stream-context
      */
     public static function create($options = [], array $params = []): Context
     {

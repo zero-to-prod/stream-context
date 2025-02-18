@@ -2,12 +2,15 @@
 
 namespace Zerotoprod\StreamContext\Helpers;
 
+use Zerotoprod\DynamicSetter\DynamicSetter;
+use Zerotoprod\Transformable\Transformable;
+
 /**
  * @internal
  */
 trait DataModel
 {
     use \Zerotoprod\DataModel\DataModel;
-    use \Zerotoprod\Transformable\Transformable;
-    use \Zerotoprod\DynamicSetter\DynamicSetter;
+    use Transformable;
+    use DynamicSetter;
 }
