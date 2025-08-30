@@ -18,6 +18,7 @@ use Zerotoprod\StreamContext\DataModels\Options;
  *
  * @see https://www.php.net/manual/en/function.stream-context-create.php
  * @link https://github.com/zero-to-prod/stream-context
+ * A wrapper for stream_context_create()
  */
 class StreamContext
 {
