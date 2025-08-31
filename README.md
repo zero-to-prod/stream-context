@@ -16,10 +16,10 @@
 - [Introduction](#introduction)
 - [Requirements](#requirements)
 - [Installation](#installation)
+- [Documentation Publishing](#documentation-publishing)
+  - [Automatic Documentation Publishing](#automatic-documentation-publishing)
 - [Usage](#usage)
     - [Supported Protocols](#supported-protocols)
-- [Documentation Publishing](#documentation-publishing)
-    - [Automatic Documentation Publishing](#automatic-documentation-publishing)
 - [Local Development](./LOCAL_DEVELOPMENT.md)
 - [Contributing](#contributing)
 
@@ -42,6 +42,39 @@ composer require zero-to-prod/stream-context
 ```
 
 This will add the package to your project’s dependencies and create an autoloader entry for it.
+
+## Documentation Publishing
+
+You can publish this README to your local documentation directory.
+
+This can be useful for providing documentation for AI agents.
+
+This can be done using the included script:
+
+```bash
+# Publish to default location (./docs/zero-to-prod/stream-context)
+vendor/bin/zero-to-prod-stream-context
+
+# Publish to custom directory
+vendor/bin/zero-to-prod-stream-context /path/to/your/docs
+```
+
+### Automatic Documentation Publishing
+
+You can automatically publish documentation by adding the following to your `composer.json`:
+
+```json
+{
+  "scripts": {
+    "post-install-cmd": [
+      "zero-to-prod-stream-context"
+    ],
+    "post-update-cmd": [
+      "zero-to-prod-stream-context"
+    ]
+  }
+}
+```
 
 ## Usage
 
@@ -77,39 +110,6 @@ fclose($client);
 - Phar: Set options like compression and metadata for Phar archives.
 - Zip: Handle encrypted Zip files with password options.
 - Zlib: Control compression levels for zlib streams.
-
-## Documentation Publishing
-
-You can publish this README to your local documentation directory.
-
-This can be useful for providing documentation for AI agents.
-
-This can be done using the included script:
-
-```bash
-# Publish to default location (./docs/zero-to-prod/stream-context)
-vendor/bin/zero-to-prod-stream-context
-
-# Publish to custom directory
-vendor/bin/zero-to-prod-stream-context /path/to/your/docs
-```
-
-### Automatic Documentation Publishing
-
-You can automatically publish documentation by adding the following to your `composer.json`:
-
-```json
-{
-  "scripts": {
-    "post-install-cmd": [
-      "zero-to-prod-stream-context"
-    ],
-    "post-update-cmd": [
-      "zero-to-prod-stream-context"
-    ]
-  }
-}
-```
 
 ## Contributing
 
